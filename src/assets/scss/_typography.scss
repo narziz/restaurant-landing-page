@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+
+html,
+body {
+    font-size: 14px;
+    // font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+h1,
+h2,
+h4 {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+h3 {
+    font-family: 'Cookie', cursive;
+    font-size: 1.7rem;
+    color: $yellow;
+}
+
+p {
+    line-height: 2;
+    margin-bottom: 1rem;
+}
+
+.banner-left {
+    h1 {
+        font-size: 3.7rem;
+        line-height: 4rem;
+    }
+
+    p {
+        font-size: 1rem
+    }
+}
+
+.menu-section {
+    .dollar {
+        font-weight: 600;
+        font-size: 1.5rem;
+    }
+}

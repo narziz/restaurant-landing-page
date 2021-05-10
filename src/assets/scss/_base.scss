@@ -1,0 +1,27 @@
+// ---- resets ----
+html,
+body,
+h1,
+ul,
+h3,
+p{
+  padding: 0;
+  margin: 0;
+}
+
+ul li{
+  list-style: none;
+}
+
+
+// ---- variables ----
+$main-green : #59882b;
+$main-green-light : #8cb560;
+$very-light-green: #f6ffea;
+$light: #ffffff;
+$gray: #f8fbf5;
+$dark-gray: #212529;
+$yellow: #febd00;
+$green-gradient: linear-gradient(to bottom right, #8cb560, #639d2b);
+$gray-gradient: linear-gradient(to bottom right, #f8fbf5, #ffffff);
+$box-shadow: 0 4px 8px 0 #21252930, 0 6px 20px 0 #21252930;

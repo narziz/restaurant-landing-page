@@ -1,0 +1,17 @@
+@mixin button-design {
+  background: $green-gradient;
+  box-shadow: $box-shadow;
+  color: $light;
+  padding: 1rem 1.5rem;
+  border-radius: 0.3rem;
+  border: none;
+  cursor: pointer;
+  width: fit-content;
+}
+
+@mixin input-design {
+  box-shadow: $box-shadow;
+  padding: 1rem 1.5rem;
+  border-radius: 0.3rem;
+  border: none;
+}
