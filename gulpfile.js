@@ -42,4 +42,5 @@ function watchTask() {
 
 exports.sass = sassToCss;
 exports.javascript = copyJavascript;
-exports.default = series(sassToCss, imageMinify, copyJavascript, watchTask);
+exports.watch = watchTask;
+exports.default = series(sassToCss, imageMinify, copyJavascript);
