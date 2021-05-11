@@ -20,6 +20,14 @@ function imageMinify () {
         .pipe(dest('dist/images'))
 }
 
+function copyJavascript (){
+  return src('./src/js/*.js')
+    .pipe(dest('dist/js'))
+    .pipe(browserSync.reload({
+      stream: true
+    }));
+}
+
 function watchTask() {
 
     browserSync.init({
@@ -28,8 +36,10 @@ function watchTask() {
     });
 
     watch('src/assets/scss/*.scss', series('sass'));
-    watch(['./*.html', 'dist/images/*.+(png|jpg|jpeg|svg|gif)', 'dist/css/*.css']).on('change', browserSync.reload);
+    watch('src/js/*.js', series('javascript'));
+    watch(['./*.html', 'dist/js/*.js', 'dist/images/*.+(png|jpg|jpeg|svg|gif)', 'dist/css/*.css']).on('change', browserSync.reload);
 }
 
 exports.sass = sassToCss;
-exports.default = series(sassToCss, imageMinify, watchTask);
+exports.javascript = copyJavascript;
+exports.default = series(sassToCss, imageMinify, copyJavascript, watchTask);

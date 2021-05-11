@@ -13,16 +13,21 @@ section{
   display: flex;
   justify-content: center;
   margin: 5rem 0rem;
+  padding: 3rem 0rem;
+  overflow: hidden;
 }
 .banner-cont{
   margin: 0;
 }
 .container{
   width: 70%;
+  padding: 0 1rem;
 }
 
 .banner-cont{
   background: $gray-gradient;
+  padding-top: 0;
+
   .banner{
     display: flex;
     justify-content: space-between;;
@@ -38,7 +43,7 @@ header,
 .header-right,
 .nav > ul{
   display: flex;
-  flex: row;
+  flex-direction: row;
   align-items: center;
 }
 
@@ -48,12 +53,75 @@ header{
 }
 
 .header-right{
+
   .nav > ul > li {
-    margin-right: 1rem;
+    margin-right: 1.5rem;
+    position: relative;
+    padding: 0.5rem 0;
+
+    &::after{
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3px;
+      bottom: 0;
+      left: 0;
+      background: $dark-gray;
+      transition: width 0.3s ease-in;
+    }
+
+    &:hover::after{
+      width: 2rem;
+      transition: width 0.3s ease-in;
+    }
   }
   .header-buttons button{
     background: none;
     border: none;
+  }
+  #menu-btn{
+    display: none
+  }
+  .mobile-menu{
+    display: block;
+    position: absolute;
+    background: $green-gradient;
+    z-index: 222;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    transition: 1s;
+    clip-path: circle(0% at 100% 0%);
+
+    .close-menu{
+      padding: 2rem 3rem;
+      text-align: end;
+      font-size: 1.5rem;
+      color: $light;
+    }
+    ul{
+      padding: 0 3rem 2rem 3rem;
+
+      li{
+        padding: 1rem 0;
+        border-bottom: 1px solid darken($gray, 5%);
+
+        a{
+          color: $light;
+        }
+      }
+    }
+  }
+
+.active{
+  transition: 1s;
+  clip-path: circle(150% at 100% 0%);
+}
+  .header-buttons{
+    button:hover{
+      color: $main-green;
+    }
   }
 }
 
@@ -94,6 +162,7 @@ header{
       border: 1rem solid $very-light-green;
       border-radius: 50%;
       z-index: 1;
+      animation: rotation 10s infinite linear;
     }
     &::before{
       content: '';
@@ -111,6 +180,7 @@ header{
       background: url('../images/banner-bg.png') no-repeat;
       // background-size: 30rem 30rem;
       background-size: cover;
+      animation: rotation 10s infinite linear;
     }
   }
 }
@@ -179,7 +249,9 @@ header{
   }
   .food{
     width: 30%;
-    box-shadow: $box-shadow;
+    // box-shadow: $box-shadow;
+    border: 2px solid $gray;
+    border-radius: 0.5rem;
     padding: 0.5rem;
     position: relative;
 
@@ -241,5 +313,148 @@ header{
   .active-menu{
     color: $yellow;
     border-color: $yellow;
+  }
+}
+
+// history
+.history-section{
+  .history{
+    display: flex;
+    justify-content: space-between;
+
+    .history-left{
+      width: 50%;
+
+      button{
+        @include button-design;
+        margin-top: 3rem;
+      }
+    }
+
+    .history-right{
+      width: 45%;
+
+      img{
+        width: 100%;
+        background: $gray;
+        border-radius: 0.5rem;
+      }
+    }
+  }
+}
+
+// news sevtion
+.news-section{
+
+  .title{
+    text-align: center;
+  }
+
+  .news-container{
+    display: flex;
+    justify-content: space-between;
+
+    .blog-post{
+      width: 30%;
+      .news-tumb{
+        width: 100%;
+        height: 13rem;
+        margin-bottom: 1.5rem;
+
+        img{
+          width: 100%;
+          height: 13rem;
+          object-fit: cover;
+          border-radius: 0.5rem;
+        }
+      }
+      button{
+        color: $yellow;
+        border: none;
+        background: none;
+        font-weight: 700;
+        cursor: pointer;
+        padding: 0;
+      }
+    }
+  }
+}
+
+// subscription
+.subscription-section{
+  .title{
+    text-align: center;
+  }
+  .input-cont{
+    display: flex;
+    justify-content: center;
+    padding: 3rem 0;
+
+    & > div{
+      width: fit-content;
+      position: relative;
+      width: 50%;
+      height: 3rem;
+      display: flex;
+      align-items: center;
+    }
+    input{
+      @include input-design;
+      width: 90%;
+      border-radius: 5rem;
+      position: absolute;
+      padding: 1.2rem 1.5rem;
+
+      &:focus{
+        border: 2px solid $main-green;
+      }
+
+      &:focus-visible{
+        outline: none;
+      }
+    }
+    button{
+      @include button-design;
+      right: 0.7rem;
+      position: absolute;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      padding: 0;
+      font-size: 1.1rem;
+    }
+  }
+
+}
+
+
+// footer
+footer{
+  padding: 3rem 0;
+  background: $gray;
+  .container{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  }
+  .column{
+    width: 20%;
+    padding: 0 1rem;
+
+    &:first-child{
+      width: 30%;
+    }
+
+    li{
+      padding: 0.5rem 0;
+    }
+
+    .social-links{
+      i{
+        @include button-design;
+        padding: 0.6rem;
+        margin-right: 0.5rem;
+      }
+    }
   }
 }

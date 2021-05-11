@@ -30,7 +30,22 @@ p {
     line-height: 2;
     margin-bottom: 1rem;
 }
+a{
+  color: $dark-gray;
+}
 
+header{
+  li{
+    font-size: 1.2rem;
+  }
+
+  .header-buttons{
+    button{
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  }
+}
 .banner-left {
     h1 {
         font-size: 3.7rem;
@@ -47,4 +62,27 @@ p {
         font-weight: 600;
         font-size: 1.5rem;
     }
+}
+
+.news-section {
+    .news-container {
+
+      button{
+        font-family: 'Josefin Sans', sans-serif !important;
+        font-size: 1.1rem;
+      }
+      p{
+        font-size: 0.9rem;
+      }
+        h3 {
+          font-family: 'Josefin Sans', sans-serif !important;
+          color: $dark-gray;
+          margin-bottom: 1rem;
+        }
+    }
+}
+footer{
+  h4{
+    font-size: 1.3rem;
+  }
 }
